@@ -14,17 +14,18 @@
  * limitations under the License.
  */
 
-package com.twobuffers.crashlyticsexample
+package com.twobuffers.crashlyticsexample.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.crashlytics.android.Crashlytics
+import com.twobuffers.crashlyticsexample.BuildConfig
+import com.twobuffers.crashlyticsexample.R
+import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.build_flavour_txt
 import kotlinx.android.synthetic.main.activity_main.default_crash_btn
 import kotlinx.android.synthetic.main.activity_main.flavour_crash_btn
-import java.lang.RuntimeException
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

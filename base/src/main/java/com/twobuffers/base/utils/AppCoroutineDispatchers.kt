@@ -14,9 +14,12 @@
  * limitations under the License.
  */
 
-rootProject.name='Crashlytics Example'
+package com.twobuffers.base.utils
 
-include ':base'
-include ':base-android'
-include ':common-app'
-include ':app'
+import kotlinx.coroutines.CoroutineDispatcher
+
+data class AppCoroutineDispatchers(
+    val io: CoroutineDispatcher,
+    val computation: CoroutineDispatcher,
+    val main: CoroutineDispatcher
+)

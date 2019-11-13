@@ -14,9 +14,22 @@
  * limitations under the License.
  */
 
-rootProject.name='Crashlytics Example'
+@file:Suppress("unused")
 
-include ':base'
-include ':base-android'
-include ':common-app'
-include ':app'
+package com.twobuffers.crashlyticsexample.ui
+
+import com.twobuffers.base.di.ActivityScoped
+import dagger.Module
+import dagger.android.ContributesAndroidInjector
+
+@Module(includes = [
+    MainModule.ActivityDiModule::class
+])
+abstract class MainModule {
+    @Module
+    abstract class ActivityDiModule {
+        @ContributesAndroidInjector
+        @ActivityScoped
+        abstract fun contributeSubcomponent(): MainActivity
+    }
+}

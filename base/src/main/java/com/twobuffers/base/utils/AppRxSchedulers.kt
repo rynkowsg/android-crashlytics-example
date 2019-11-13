@@ -14,9 +14,13 @@
  * limitations under the License.
  */
 
-rootProject.name='Crashlytics Example'
+package com.twobuffers.base.utils
 
-include ':base'
-include ':base-android'
-include ':common-app'
-include ':app'
+import io.reactivex.Scheduler
+
+data class AppRxSchedulers(
+    val io: Scheduler,
+    val computation: Scheduler,
+    val main: Scheduler,
+    val newThread: Scheduler
+)

@@ -28,6 +28,8 @@ ext {
     ci = System.getenv("CI") == "true"
 }
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion buildConfig.compileSdk
     buildToolsVersion buildConfig.buildTools
@@ -89,7 +91,17 @@ dependencies {
     implementation Libs.AndroidX.constraintlayout
     implementation Libs.AndroidX.coreKtx
 
+    implementation Libs.Dagger.dagger
+    implementation Libs.Dagger.android
+    implementation Libs.Dagger.androidSupport
+    kapt Libs.Dagger.compiler
+    kapt Libs.Dagger.androidProcessor
+
     implementation Libs.Crashlytics.crashlytics
+
+    implementation project(":base")
+    implementation project(":base-android")
+    implementation project(":common-app")
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -14,9 +14,19 @@
  * limitations under the License.
  */
 
-rootProject.name='Crashlytics Example'
+@file:Suppress("unused")
 
-include ':base'
-include ':base-android'
-include ':common-app'
-include ':app'
+package com.twobuffers.crashlyticsexample.di
+
+import com.twobuffers.base.di.TWOBUFFERS_DEBUG
+import com.twobuffers.crashlyticsexample.BuildConfig
+import dagger.Module
+import dagger.Provides
+import javax.inject.Named
+
+@Module
+class BuildConfigModule {
+    @Provides
+    @Named(TWOBUFFERS_DEBUG)
+    fun provideIsDebug(): Boolean = BuildConfig.DEBUG
+}

@@ -14,9 +14,31 @@
  * limitations under the License.
  */
 
-rootProject.name='Crashlytics Example'
+import com.twobuffers.buildsrc.Libs
 
-include ':base'
-include ':base-android'
-include ':common-app'
-include ':app'
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+kapt {
+    correctErrorTypes = true
+    useBuildCache = true
+}
+
+android {
+    compileSdkVersion buildConfig.compileSdk
+    buildToolsVersion buildConfig.buildTools
+    defaultConfig {
+        minSdkVersion buildConfig.minSdk
+        targetSdkVersion buildConfig.targetSdk
+    }
+}
+
+dependencies {
+    api Libs.AndroidX.annotation
+
+    implementation Libs.timber
+
+    implementation project(':base')
+}

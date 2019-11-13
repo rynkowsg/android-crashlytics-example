@@ -14,9 +14,15 @@
  * limitations under the License.
  */
 
-rootProject.name='Crashlytics Example'
+package com.twobuffers.base.utils
 
-include ':base'
-include ':base-android'
-include ':common-app'
-include ':app'
+import android.app.Application
+import androidx.annotation.IntRange
+
+abstract class AppInitializer(
+    /** Priority value - helps to order launching AppInitializers.
+     * Takes values from 0 to 127. */
+    @IntRange(from = 0, to = 127) val priority: Int = 64
+) {
+    abstract fun init(application: Application)
+}

@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-rootProject.name='Crashlytics Example'
+package com.twobuffers.base.di
 
-include ':base'
-include ':base-android'
-include ':common-app'
-include ':app'
+// This file contains constants necessary for DI purposes.
+
+const val TWOBUFFERS_DEBUG = "TWOBUFFERS_DEBUG"
