@@ -18,11 +18,29 @@ package com.twobuffers.crashlyticsexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.crashlytics.android.Crashlytics
+import kotlinx.android.synthetic.main.activity_main.build_flavour_txt
+import kotlinx.android.synthetic.main.activity_main.default_crash_btn
+import kotlinx.android.synthetic.main.activity_main.flavour_crash_btn
+import java.lang.RuntimeException
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupCrashButtons()
+    }
+
+    private fun setupCrashButtons() {
+        val flavour = BuildConfig.FLAVOR.capitalize()
+        build_flavour_txt.text = "$flavour app"
+        default_crash_btn.setOnClickListener {
+            Crashlytics.getInstance().crash() // Force a crash
+        }
+        flavour_crash_btn.text = "$flavour crash!"
+        flavour_crash_btn.setOnClickListener {
+            throw RuntimeException("$flavour exception happened.")
+        }
     }
 }
