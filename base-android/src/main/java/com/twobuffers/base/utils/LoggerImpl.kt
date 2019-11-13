@@ -16,6 +16,8 @@
 
 package com.twobuffers.base.utils
 
+import android.util.Log
+import com.crashlytics.android.Crashlytics
 import javax.inject.Inject
 import timber.log.Timber
 
@@ -24,6 +26,7 @@ class LoggerImpl @Inject constructor() : Logger {
         if (debugMode) {
             Timber.plant(TimberDebugTreeWithThreadName())
         }
+        Timber.plant(CrashlyticsTree())
     }
 
     override fun plant(tree: SimplifiedTree) {
@@ -152,3 +155,13 @@ private class TimberDebugTreeWithThreadName : WrappedTimberDebugTree() {
 }
 // https://stackoverflow.com/questions/38689399/log-method-name-and-line-number-in-timber/49216400#49216400
 // https://stackoverflow.com/questions/38689399/log-method-name-and-line-number-in-timber/38689400#38689400
+
+private class CrashlyticsTree : Timber.Tree() {
+    override fun isLoggable(tag: String?, priority: Int): Boolean {
+        return priority >= Log.DEBUG
+    }
+
+    override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
+        Crashlytics.log(message)
+    }
+}

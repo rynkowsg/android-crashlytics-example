@@ -40,5 +40,7 @@ dependencies {
 
     implementation Libs.timber
 
+    implementation Libs.Crashlytics.crashlytics
+
     implementation project(':base')
 }
