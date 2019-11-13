@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "758552251954",
+    "firebase_url": "https://twobuffers-crashlytics-example.firebaseio.com",
+    "project_id": "twobuffers-crashlytics-example",
+    "storage_bucket": "twobuffers-crashlytics-example.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758552251954:android:81f8d632e3d1b4c487b62b",
+        "android_client_info": {
+          "package_name": "com.twobuffers.crashlyticsexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758552251954-1m95daqkeoj0ijpj2qnfqsc6f18pg3vl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMl9z_z7PrcyZMPSSCDHHypCUBikN4z30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758552251954-1m95daqkeoj0ijpj2qnfqsc6f18pg3vl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758552251954:android:d04f1f12104ff6f487b62b",
+        "android_client_info": {
+          "package_name": "com.twobuffers.crashlyticsexample.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758552251954-1m95daqkeoj0ijpj2qnfqsc6f18pg3vl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMl9z_z7PrcyZMPSSCDHHypCUBikN4z30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758552251954-1m95daqkeoj0ijpj2qnfqsc6f18pg3vl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

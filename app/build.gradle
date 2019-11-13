@@ -22,6 +22,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'io.fabric'
+
 ext {
     ci = System.getenv("CI") == "true"
 }
@@ -86,4 +88,8 @@ dependencies {
     implementation Libs.AndroidX.appcompat
     implementation Libs.AndroidX.constraintlayout
     implementation Libs.AndroidX.coreKtx
+
+    implementation Libs.Crashlytics.crashlytics
 }
+
+apply plugin: 'com.google.gms.google-services'

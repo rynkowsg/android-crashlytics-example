@@ -27,10 +27,13 @@ buildscript {
         mavenLocal()
         google()
         jcenter()
+        maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
         classpath Libs.androidGradlePlugin
         classpath Libs.Kotlin.gradlePlugin
+        classpath Libs.googlePlayServicesPlugin
+        classpath Libs.Crashlytics.gradlePlugin
     }
 }
 
